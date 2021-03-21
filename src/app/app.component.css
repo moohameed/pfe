@@ -1,0 +1,48 @@
+.nav-item, .navbar-brand {
+    font-family: 'Anton', sans-serif;
+  }
+  a {
+    font-family: 'Anton', sans-serif;
+  }
+.example-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #101820FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,  rgb(221, 204, 48) ,#101820FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  rgb(221, 204, 48) ,#101820FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  
+  }
+
+  .example-sidenav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    background: #101820FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,  rgb(221, 204, 48) ,#101820FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  rgb(221, 204, 48) ,#101820FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+  }
+  .example-container {
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    left: 0;
+    right: 0;
+  }
+
+  .example-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #101820FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,  rgb(221, 204, 48) ,#101820FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  rgb(221, 204, 48) ,#101820FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+    
+  }
