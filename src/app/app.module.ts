@@ -23,7 +23,9 @@ import { AdminModule } from './admin/admin.module';
 import { NgxModule } from './shared/ngx/ngx.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesModule } from './shared/files/files.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptorService } from './services/auth/token-interceptor.service';
+import { ErrorInterceptorService } from './services/auth/error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,18 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : TokenInterceptorService,
+      multi : true
+    },
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : ErrorInterceptorService,
+      multi : true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
