@@ -1,4 +1,4 @@
-import {Injectable} from "@angular/core";
+/*import {Injectable} from "@angular/core";
 import {
   HttpInterceptor,
   HttpRequest,
@@ -17,7 +17,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 @Injectable({
   providedIn: "root"
 })
-export class ErrorInterceptorService implements HttpInterceptor {
+   export class ErrorInterceptorService implements HttpInterceptor {
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
@@ -61,4 +61,4 @@ export class ErrorInterceptorService implements HttpInterceptor {
   constructor(private authService: AuthService,
               private router: Router, private snackBar: MatSnackBar) {
   }
-}
+} */

@@ -25,7 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilesModule } from './shared/files/files.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './services/auth/token-interceptor.service';
-import { ErrorInterceptorService } from './services/auth/error-interceptor.service';
+//import { ErrorInterceptorService } from './services/auth/error-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -64,11 +64,13 @@ import { ErrorInterceptorService } from './services/auth/error-interceptor.servi
       useClass : TokenInterceptorService,
       multi : true
     },
+    /*
     {
       provide : HTTP_INTERCEPTORS,
       useClass : ErrorInterceptorService,
       multi : true
     }
+    */
   ],
   bootstrap: [AppComponent]
 })

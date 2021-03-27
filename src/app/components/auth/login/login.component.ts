@@ -19,36 +19,40 @@ export class LoginComponent implements OnInit {
     ) {
     
    }
-   get email() {
-      return this.authCredentialsDto.get('email')
+   get username() {
+      return this.authCredentialsDto.get('username')
      }
    get password() {
       return this.authCredentialsDto.get('password') 
     }
 
   ngOnInit(): void {
-    
+    let isLoggedIn = this.authService.isLoggedIn();
+    if (isLoggedIn) {
+      this.router.navigate(['/product']);
+    } 
 
     this.authCredentialsDto = this.fb.group({
-      username: new FormControl(null, [Validators.required,Validators.email]),
+      username: new FormControl(null, [Validators.required]),
       password: new FormControl(null, [Validators.required,Validators.minLength(6)])
     });
   }
   saveUser(){
-    this.authService.login(this.authCredentialsDto.value).subscribe(
-      res => {
-        localStorage.setItem("token", res.accessToken);
-        this.authService.prepareUserData();
-        this.router.navigate([`/home`]);
+    let data = this.authCredentialsDto.value;
+    this.authService.login(data).subscribe(
+      res=>{
+         
+         console.log(res);
+        let token = res.token;
+        localStorage.setItem("myToken",token);
+        this.router.navigate(['/home']);
       },
-      error => {
-        this.alertService.error(error)
-       
+      err=>{
+        console.log(err);
       }
-    );
+    )
+
   }
-
-
   }
 
 

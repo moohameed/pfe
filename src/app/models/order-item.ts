@@ -1,7 +1,3 @@
-  
-import {Product} from "./product";
-import {Order} from "./order";
-
 export class OrderItem {
   id: number;
   unit_price: number;
